@@ -524,39 +524,43 @@ CODEX_MCP_CONFIG
 RUN printf '%s\n' \
         '' \
         '# ------------------------------------------------------------' \
-        '# Codex — YOLO: no approvals, no sandbox' \
+        '# Codex — Approve for me: sandboxed, with automatic review' \
         '# ------------------------------------------------------------' \
         '' \
         'astra6() {' \
-        '    command codex --model gpt-6-astra --yolo "$@"' \
+        '    command codex --model gpt-6-astra --sandbox workspace-write --ask-for-approval on-request --config approvals_reviewer=auto_review "$@"' \
         '}' \
         '' \
         'sol6() {' \
-        '    command codex --model gpt-6-sol --yolo "$@"' \
+        '    command codex --model gpt-6-sol --sandbox workspace-write --ask-for-approval on-request --config approvals_reviewer=auto_review "$@"' \
         '}' \
         '' \
         'sol61() {' \
-        '    command codex --model gpt-6.1-sol --yolo "$@"' \
+        '    command codex --model gpt-6.1-sol --sandbox workspace-write --ask-for-approval on-request --config approvals_reviewer=auto_review "$@"' \
+        '}' \
+        '' \
+        'terra61() {' \
+        '    command codex --model gpt-6.1-terra --sandbox workspace-write --ask-for-approval on-request --config approvals_reviewer=auto_review "$@"' \
         '}' \
         '' \
         'luna6() {' \
-        '    command codex --model gpt-6-luna --yolo "$@"' \
+        '    command codex --model gpt-6-luna --sandbox workspace-write --ask-for-approval on-request --config approvals_reviewer=auto_review "$@"' \
         '}' \
         '' \
         'sol56() {' \
-        '    command codex --model gpt-5.6-sol --yolo "$@"' \
+        '    command codex --model gpt-5.6-sol --sandbox workspace-write --ask-for-approval on-request --config approvals_reviewer=auto_review "$@"' \
         '}' \
         '' \
         'terra56() {' \
-        '    command codex --model gpt-5.6-terra --yolo "$@"' \
+        '    command codex --model gpt-5.6-terra --sandbox workspace-write --ask-for-approval on-request --config approvals_reviewer=auto_review "$@"' \
         '}' \
         '' \
         'luna56() {' \
-        '    command codex --model gpt-5.6-luna --yolo "$@"' \
+        '    command codex --model gpt-5.6-luna --sandbox workspace-write --ask-for-approval on-request --config approvals_reviewer=auto_review "$@"' \
         '}' \
         '' \
         'gpt55() {' \
-        '    command codex --model gpt-5.5 --yolo "$@"' \
+        '    command codex --model gpt-5.5 --sandbox workspace-write --ask-for-approval on-request --config approvals_reviewer=auto_review "$@"' \
         '}' \
         '' \
         >> "/home/${DEV_USER}/.bashrc" \
